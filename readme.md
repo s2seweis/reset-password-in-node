@@ -1,11 +1,3 @@
-# Secure Password Reset 
+### Github Origin: https://github.com/sk-Jahangeer/node-email-password-reset
 
-This is a password reset sample project
-
-Workflow
-
-![Sample](reset-password.png "Workflow")
-
-Follow the tutorial [here]("") to learn the implementation
-
-
+### Youtbe Link: https://www.youtube.com/watch?v=K-x4Yb0Hv6U&t=2s
