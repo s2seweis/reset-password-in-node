@@ -15,8 +15,20 @@ const signup = async (data) => {
     throw new Error("Email already exist", 422);
   }
   user = new User(data);
+  console.log("line:1", user);
+  console.log("line:2", user.email);
+  console.log("line:3", user.name);
   const token = JWT.sign({ id: user._id }, JWTSecret);
   await user.save();
+
+  sendEmail(
+    user.email,
+    "Password Reset Request",
+    {
+      name: user.name,
+    },
+    "./template/welcome.handlebars"
+  );
 
   return (data = {
     userId: user._id,
@@ -24,6 +36,9 @@ const signup = async (data) => {
     name: user.name,
     token: token,
   });
+
+  
+
 };
 
 const requestPasswordReset = async (email) => {
@@ -54,6 +69,7 @@ const requestPasswordReset = async (email) => {
     "./template/requestResetPassword.handlebars"
   );
   return { link };
+
 };
 
 const resetPassword = async (userId, token, password) => {
