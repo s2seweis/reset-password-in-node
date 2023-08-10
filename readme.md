@@ -53,5 +53,7 @@
 # https://kinsta.com/blog/gmail-smtp-server/
 # http://nodemailer.com/about/
 
+### Sending and Receiving Emails is working
+
 
 
